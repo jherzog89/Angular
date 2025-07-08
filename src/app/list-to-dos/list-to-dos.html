@@ -1,0 +1,21 @@
+<table border="1">
+    <caption>my Todo's</caption>
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(todo of todos; track todo.id){
+            <tr>
+                <td>{{todo.id}}</td>
+                <td>{{todo.description}}</td>
+            </tr>
+        }
+    </tbody>
+    </table>

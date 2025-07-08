@@ -22,7 +22,7 @@ export class Login {
     handleLogin(){
       if(this.username==="in28minutes" && this.password === 'dummy'){
         this.invalidLogin = false;
-        this.router.navigate(['welcome']);
+        this.router.navigate(['welcome', this.username]);
        } else
         this.invalidLogin = true;
    }
