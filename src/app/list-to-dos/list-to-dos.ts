@@ -1,16 +1,25 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+
+export class Todo{
+  constructor(
+    public id: number,
+    public description: string,
+    public done: boolean,
+    public targetDate: Date){
+  }
+}
 
 @Component({
   selector: 'app-list-to-dos',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './list-to-dos.html',
   styleUrl: './list-to-dos.css'
 })
 export class ListToDos {
   todos=[
-    {id:1,description: 'Learn to Dance'},
-    {id:2,description: 'Another list item'},
-    {id:3,description: 'a third list item'},
+    new Todo(1, 'Learn to Dance', false, new Date()),
+    new Todo(2, 'Another list item', false, new Date()),
+    new Todo(3, 'a third list item', true, new Date())
   ]
 }
