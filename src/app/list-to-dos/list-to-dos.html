@@ -1,4 +1,10 @@
 <h1>My Todo's</h1>
+        @if(message){
+            <div class="alert alert-success">
+                <small>{{message}}</small>
+            </div>
+        }
+
 <div class="container">
 <table class="table">
     <thead>
@@ -6,6 +12,8 @@
             <th>Description</th>
              <th>Target Date</th>
             <th>Is Completed</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -13,10 +21,14 @@
             <tr>
                 <td>{{todo.description}}</td>
                 <td>{{todo.targetDate | date:'MM/dd/yyyy'}}</td>
-                <td>{{todo.done}}</td>
-
+                <td>{{todo.done.toString() | uppercase}}</td>
+                 <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
+                <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">Delete</button></td>
             </tr>
         }
     </tbody>
+    <div class="row">
+         <button (click)="addTodo()" class="btn btn-success">Add</button>
+    </div>
     </table>
     </div>

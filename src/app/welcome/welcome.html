@@ -3,3 +3,15 @@
 <div class="container">
     welcome {{name}}. You can manage your todos <a routerLink="/todos">here</a>
 </div>
+
+
+<div class="container">
+    Click here to get a cusomized welcome message
+    <button (click)="getWelcomeMessageWithParameter()" class=".btn btn=success">Get Welcome Message</button>
+</div>
+    @if(welcomeMessageFromService()){
+        <div class="container">
+        <h2>Your customized Welcome Message</h2>
+            {{welcomeMessageFromService()}}
+        </div>
+    }
