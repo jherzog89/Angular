@@ -39,7 +39,7 @@ export class Welcome implements OnInit{
   }
 
   handleErrorResponse(error:any){
-    this.welcomeMessageFromService = error.message;
+    this.welcomeMessageFromService.set(error.message);
   }
 
   ngOnInit(){
