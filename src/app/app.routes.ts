@@ -12,8 +12,8 @@ export const routes: Routes = [
     {path:'login', component: Login}, 
     {path:'welcome/:name', component: Welcome, canActivate:[RouteGuard]},
     {path:'', component: Login},
-    {path:'todos', component: ListToDos, canActivate:[RouteGuard]},
+    {path:'apis', component: ListToDos, canActivate:[RouteGuard]},
     {path:'logout', component: Logout, canActivate:[RouteGuard]},
-    {path:'todos/:id', component:TodoUpdate, canActivate:[RouteGuard]},
+    {path:'apis/:id', component:TodoUpdate, canActivate:[RouteGuard]},
     {path:'**', component: Error}
 ];

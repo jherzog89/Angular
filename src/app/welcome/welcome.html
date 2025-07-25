@@ -1,17 +1,18 @@
 <h1>Welcome!</h1>
 
 <div class="container">
-    welcome {{name}}. You can manage your todos <a routerLink="/todos">here</a>
+    welcome {{name}}.
 </div>
+<br>
 
 
 <div class="container">
-    Click here to get a cusomized welcome message
-    <button (click)="getWelcomeMessageWithParameter()" class=".btn btn=success">Get Welcome Message</button>
+    <button (click)="getWelcomeMessageWithParameter()" class=".btn btn=success">Send test API request</button>
 </div>
+<br>
     @if(welcomeMessageFromService()){
         <div class="container">
-        <h2>Your customized Welcome Message</h2>
+        <h2>Test API Response:</h2>
             {{welcomeMessageFromService()}}
         </div>
     }

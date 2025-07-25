@@ -1,4 +1,4 @@
-<h1>My Todo's</h1>
+<h1>API UI</h1>
         @if(message){
             <div class="alert alert-success">
                 <small>{{message}}</small>
@@ -9,26 +9,31 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Description</th>
-             <th>Target Date</th>
-            <th>Is Completed</th>
-            <th>Update</th>
-            <th>Delete</th>
+            <th>API</th>
+             <th>Original String</th>
+            <th>Reversed String</th>
+            <th>Time</th>
+            <th>Microservice ID</th>
         </tr>
     </thead>
     <tbody>
-        @for(todo of todos; track todo.id){
+        @for(maniStr of this.maniStringList; track maniStr.id){
             <tr>
-                <td>{{todo.description}}</td>
-                <td>{{todo.targetDate | date:'MM/dd/yyyy'}}</td>
-                <td>{{todo.done.toString() | uppercase}}</td>
-                 <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
-                <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">Delete</button></td>
+                <td>{{maniStr.apiUsed}}</td>
+                <td>{{maniStr.originalString}}</td>
+                <td>{{maniStr.manipulatedString}}</td>
+                <td>{{maniStr.timeCompleted | date:'MM/dd/yyyy hh:mm:ss.SSS'}}</td>
+                <td>{{maniStr.microserviceId}}</td>
             </tr>
         }
     </tbody>
-    <div class="row">
-         <button (click)="addTodo()" class="btn btn-success">Add</button>
+        </table>
+    <div class="containerButton">
+        <input type="text" id="orgString" [(ngModel)]="maniString.originalString" placeholder="Type something...">
+
+         <button (click)="reverseOneString()" class="btn btn-success">Reverse String</button>
+         <br>
+        <button (click)="deleteManipulatedStrings()" class="btn btn-danger">Delete All</button>
     </div>
-    </table>
+
     </div>

@@ -4,7 +4,7 @@ import { HellowWorldBean, WelcomeData } from '../service/data/welcome-data';
 
 @Component({
   selector: 'app-welcome',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './welcome.html',
   styleUrl: './welcome.css',
     changeDetection: ChangeDetectionStrategy.OnPush,

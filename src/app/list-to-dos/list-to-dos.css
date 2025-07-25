@@ -1,0 +1,5 @@
+.containerButton {
+  display: flex; /* Enables Flexbox */
+  justify-content: center; /* Centers horizontally */
+  width: 100vw; /* Takes full viewport width */
+}

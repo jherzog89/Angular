@@ -33,16 +33,16 @@ constructor(private router:Router, private route:ActivatedRoute,
     }
   }
   saveTodo(){
-    if(this.id === -1){
+    if(this.id == -1){
       this.todoService.createTodo('in28minutes', this.todo).subscribe(
-         data =>{console.log(data)
-          this.router.navigate(['todos']);
+         data =>{
+          this.router.navigate(['apis']);
          // this.cdr.detectChanges();
         })    
     }else{
       this.todoService.updateTodo('in28minutes', this.id, this.todo).subscribe(
-         data =>{console.log(data)
-          this.router.navigate(['todos']);
+         data =>{
+          this.router.navigate(['apis']);
          // this.cdr.detectChanges();
         })
   }
