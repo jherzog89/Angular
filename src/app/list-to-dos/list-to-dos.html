@@ -10,20 +10,20 @@
     <thead>
         <tr>
             <th>API</th>
-             <th>Original String</th>
+            <th>Microservice ID</th>
+            <th>Original String</th>
             <th>Reversed String</th>
             <th>Time</th>
-            <th>Microservice ID</th>
         </tr>
     </thead>
     <tbody>
         @for(maniStr of this.maniStringList; track maniStr.id){
             <tr>
                 <td>{{maniStr.apiUsed}}</td>
+                <td>{{maniStr.microserviceId}}</td>
                 <td>{{maniStr.originalString}}</td>
                 <td>{{maniStr.manipulatedString}}</td>
                 <td>{{maniStr.timeCompleted | date:'MM/dd/yyyy hh:mm:ss.SSS'}}</td>
-                <td>{{maniStr.microserviceId}}</td>
             </tr>
         }
     </tbody>
