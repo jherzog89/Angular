@@ -1,6 +1,5 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { TodoData } from '../service/data/todo-data';
 import { Router } from '@angular/router';
 import { ReverseStringService } from '../service/data/reverse-string-service';
 import { FormsModule } from '@angular/forms';
@@ -39,11 +38,10 @@ export class ManipulatedString{
   styleUrl: './list-to-dos.css'
 })
 export class ListToDos {
-  constructor(private router:Router, private todoService:TodoData, private cdr: ChangeDetectorRef, private revStrSvc:ReverseStringService){
+  constructor(private router:Router, private cdr: ChangeDetectorRef, private revStrSvc:ReverseStringService){
     this.maniString = new ManipulatedString(null,'','','','',new Date());
   }
 
-  todos: Todo[] = [];
   message:string = '';
 
   maniString:ManipulatedString;
@@ -54,32 +52,6 @@ export class ListToDos {
     this.refreshManipulatedStrings();
   }
 
-  deleteTodo(id:number){
-    this.todoService.deleteTodo('in28minutes', id).subscribe(
-      response => {
-        this.message = `Delete of ${id} todo Successful`
-        this.refreshTodos();
-        this.cdr.detectChanges();
-      }
-    )
-  }
-  refreshTodos(){
-    this.todoService.retrieveAllTodos('in28minutes').subscribe(
-      response => {
-        this.todos=response;
-        this.cdr.detectChanges();
-      }
-    )
-  }
-
-
-  
-  updateTodo(id:number){
-      this.router.navigate(['apis', id]);
-  }
-  addTodo(){
-    this.router.navigate(['apis', -1]);
-  }
   reverseOneString(){
     this.revStrSvc.sendStringReversal(this.maniString).subscribe(
          data =>{
@@ -97,7 +69,6 @@ export class ListToDos {
       }
     )
   }
-
     deleteManipulatedStrings(){
     this.revStrSvc.deleteManipulatedStrings().subscribe(
       response => {

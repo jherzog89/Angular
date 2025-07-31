@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { HardcodedAuthentication } from '../service/hardcoded-authentication';
+import { BasicAuthentication } from '../service/basic-authentication';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +11,7 @@ import { HardcodedAuthentication } from '../service/hardcoded-authentication';
 export class Menu {
   isUserLoggedIn: boolean = false;
 
-  constructor(public auth:HardcodedAuthentication){
+  constructor(public auth:BasicAuthentication){
 
   }
 

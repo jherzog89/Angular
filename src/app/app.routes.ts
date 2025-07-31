@@ -5,7 +5,6 @@ import { Error } from './error/error';
 import { ListToDos } from './list-to-dos/list-to-dos';
 import { Logout } from './logout/logout';
 import { RouteGuard } from './service/route-guard';
-import { TodoUpdate } from './todo-update/todo-update';
 
 
 export const routes: Routes = [
@@ -14,6 +13,5 @@ export const routes: Routes = [
     {path:'', component: Login},
     {path:'apis', component: ListToDos, canActivate:[RouteGuard]},
     {path:'logout', component: Logout, canActivate:[RouteGuard]},
-    {path:'apis/:id', component:TodoUpdate, canActivate:[RouteGuard]},
     {path:'**', component: Error}
 ];

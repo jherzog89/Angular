@@ -1,3 +1,2 @@
-export const API_URL = "http://localhost:8080"
-export const TODO_JPA_API_URL = "http://localhost:8080/jpa"
-export const REVERSE_STRING_URL = "http://localhost:8765/reverse-string-service/reverseString"
+export const API_URL = "http://localhost:8765"
+export const REVERSE_STRING_URL = "http://localhost:8765/reverseString"

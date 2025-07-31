@@ -12,6 +12,7 @@ export class ReverseStringService {
 
       //POST
       sendStringReversal(manipString : ManipulatedString){
+        console.log('calling' + REVERSE_STRING_URL);
         return this.http.post<ManipulatedString[]>(
           `${REVERSE_STRING_URL}`
           , manipString);

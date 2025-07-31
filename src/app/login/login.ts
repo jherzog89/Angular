@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HardcodedAuthentication } from '../service/hardcoded-authentication';
 import { BasicAuthentication } from '../service/basic-authentication';
 import { firstValueFrom } from 'rxjs';
 
@@ -20,7 +19,7 @@ export class Login {
 
   //Dependency inject router
   constructor(private router: Router,
-      private hardcodedAuthenticationServce: HardcodedAuthentication, private basicAuth: BasicAuthentication
+       private basicAuth: BasicAuthentication
   ){ }
 
 
