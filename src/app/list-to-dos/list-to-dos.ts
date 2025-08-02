@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReverseStringService } from '../service/data/reverse-string-service';
 import { FormsModule } from '@angular/forms';
+import { ReverseWordsService } from '../service/data/reverse-words-service';
 
 export class Todo{
   constructor(
@@ -38,7 +39,9 @@ export class ManipulatedString{
   styleUrl: './list-to-dos.css'
 })
 export class ListToDos {
-  constructor(private router:Router, private cdr: ChangeDetectorRef, private revStrSvc:ReverseStringService){
+
+  constructor(private router:Router, private cdr: ChangeDetectorRef, 
+    private revStrSvc:ReverseStringService, private revWordsSvc:ReverseWordsService){
     this.maniString = new ManipulatedString(null,'','','','',new Date());
   }
 
@@ -56,6 +59,15 @@ export class ListToDos {
     this.revStrSvc.sendStringReversal(this.maniString).subscribe(
          data =>{
           //this.refreshManipulatedStrings()
+          this.maniStringList=data;
+          this.cdr.detectChanges();
+        })   
+  }
+
+
+    reverseWords(){
+    this.revWordsSvc.sendWordsReversal(this.maniString).subscribe(
+         data =>{
           this.maniStringList=data;
           this.cdr.detectChanges();
         })   
