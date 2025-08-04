@@ -6,6 +6,8 @@
             @if(auth.isUserLoggedIn()){
                 <li><a routerLink="/welcome/jason" class="nav-link">Home</a></li>
                 <li><a routerLink="/apis" class="nav-link">API UI</a></li>
+                <li><a href="http://localhost:9411/" target="_blank" class="nav-link">Zipkin</a></li>
+                <li><a href="http://localhost:8761/" target="_blank" class="nav-link">Eureka</a></li>
             }
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
